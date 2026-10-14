@@ -1,0 +1,116 @@
+.profile-header-widget {
+    position: relative;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+}
+
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 6px 14px;
+    border-radius: 50px;
+    border: 1px solid rgba(0,0,0,0.08);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: 0.2s;
+}
+
+.user-badge:hover {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.avatar {
+    background: #f1f2f6;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.user-name-text {
+    font-weight: 600;
+    color: #2d3436;
+    font-size: 0.95rem;
+}
+
+/* Dropdown Hidden by default */
+.profile-card-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    width: 250px;
+    z-index: 1000;
+    border: 1px solid #eee;
+}
+
+.profile-card-dropdown.show {
+    display: block;
+}
+
+.profile-title {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 12px 0;
+    font-size: 1.2rem;
+}
+
+.profile-info-row p {
+    margin: 4px 0;
+    font-size: 0.85rem;
+    color: #636e72;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 12px 0;
+}
+
+.dropdown-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn-action, .btn-logout {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px; /* Slightly padded for easier click */
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-action {
+    background: #ee5253; /* Active accent matching your theme color */
+    color: white;
+    box-shadow: 0 4px 10px rgba(238, 82, 83, 0.2);
+}
+
+.btn-action:hover {
+    background: #ff7675;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(238, 82, 83, 0.3);
+}
+
+.btn-logout {
+    background: #fff0f0;
+    color: #ff7675;
+}
+
+.btn-logout:hover {
+    background: #ff7675;
+    color: white;
+}

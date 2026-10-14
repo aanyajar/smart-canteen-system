@@ -1,0 +1,127 @@
+.payment-container {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f8f9fa;
+    /* Premium mesh touch to match cart background */
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(28,100%,74%,0.1) 0, transparent 50%), 
+        radial-gradient(at 100% 100%, hsla(189,100%,56%,0.08) 0, transparent 50%);
+}
+
+.payment-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 400px;
+}
+
+.premium-text {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Naya styling total amount display ke liye */
+.payment-amount {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #2d3436;
+    margin-bottom: 25px;
+}
+
+.payment-amount strong {
+    color: #ee5253;
+    font-size: 1.3rem;
+}
+
+.modes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mode-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 2px solid #f1f2f6;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mode-item:hover {
+    background: #f9f9f9;
+    border-color: #ff9f43;
+}
+
+.mode-item.active {
+    border-color: #ee5253;
+    background: #fff5f5;
+}
+
+.confirm-pay-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff9f43 0%, #ee5253 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.confirm-pay-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(238, 82, 83, 0.3);
+}
+
+/* ==========================================================================
+   🚨 NEW UPDATES: Subtitles aur Coming Soon Badge ke liye (Bina purana code chede)
+   ========================================================================== */
+
+/* Subtitles wrapper for UPI, Card, and COD text alignment */
+.mode-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+}
+
+.mode-details span {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2d3436;
+    transition: color 0.3s ease;
+}
+
+.mode-details small {
+    font-size: 0.75rem;
+    color: #b2bec3;
+    margin-top: 2px;
+}
+
+/* Coming Soon Badge UI design */
+.coming-soon-badge {
+    background: #dfe6e9;
+    color: #636e72;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Active option subtitle highlight color */
+.mode-item.active .mode-details span {
+    color: #ee5253;
+}
