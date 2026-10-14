@@ -26,7 +26,7 @@ const db = mysql.createConnection({
 db.connect(err => {
     if (err) console.log('❌ DB Connection Error. Check your .env file or XAMPP.');
     else console.log('✅ MySQL Connected Securely');
-});
+    });
 
 // --- Nodemailer Configuration ---
 const transporter = nodemailer.createTransport({
@@ -52,10 +52,10 @@ app.post('/api/orders', (req, res) => {
     if (paymentMode && paymentMode !== "COD") {
         verifiedStatus = "Preparing"; // Online (Razorpay/UPI) automatically accepted
     }
-
     const sql = `INSERT INTO orders 
-    (id, user_name, total_amount, payment_mode, transaction_id, status, items) 
-    VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    (id, user_name, total_amount, payment_mode, transaction_id, status, items, created_at) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, NOW())`;
+
 
     db.query(sql, [id, user_name, totalAmount, paymentMode, transactionId, verifiedStatus, stringifiedItems], (err, result) => {
         if (err) {
@@ -255,5 +255,5 @@ app.get('/api/analysis/stats', (req, res) => {
     });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

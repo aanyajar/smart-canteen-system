@@ -19,9 +19,8 @@ function MyOrders() {
     const fetchStudentOrders = async () => {
         try {
             // Fetch all orders from Database
-            const res = await axios.get("http://localhost:5000/api/orders", {
-                headers: { 'Cache-Control': 'no-cache' }
-            });
+            const res = await axios.get("http://localhost:5001/api/orders/active");
+
             
             if (res.data && Array.isArray(res.data)) {
                 // Filter orders belonging to this user or match target order id
@@ -33,7 +32,8 @@ function MyOrders() {
                 console.log("📊 Student Matched Orders:", myOrders);
                 
                 if (myOrders.length > 0) {
-                    setOrdersList(myOrders);
+                    console.log("Order data:", res.data);
+                    setOrders(res.data);
                 } else {
                     // Fallback to all database orders if user name filter mismatch
                     setOrdersList(res.data);
